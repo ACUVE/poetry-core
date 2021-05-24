@@ -167,10 +167,13 @@ Classifier: Programming Language :: Python :: 3.9
 Classifier: Programming Language :: Python :: 3.10
 Classifier: Topic :: Software Development :: Build Tools
 Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Provides-Extra: http
 Provides-Extra: time
 Requires-Dist: cachy[msgpack] (>=0.2.0,<0.3.0)
 Requires-Dist: cleo (>=0.6,<0.7)
 Requires-Dist: pendulum (>=1.4,<2.0); (python_version ~= "2.7" and sys_platform == "win32" or python_version in "3.4 3.5") and (extra == "time")
+Requires-Dist: requests (==2.24.0); (python_version >= "3.8" and python_version < "3.9") and (extra == "http")
+Requires-Dist: requests (==2.25.0); (python_version >= "3.9" and python_version < "3.10") and (extra == "http")
 Project-URL: Documentation, https://python-poetry.org/docs
 Project-URL: Issue Tracker, https://github.com/python-poetry/poetry/issues
 Project-URL: Repository, https://github.com/python-poetry/poetry

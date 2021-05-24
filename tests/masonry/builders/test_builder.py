@@ -98,13 +98,15 @@ def test_get_metadata_content():
     ]
 
     extras = parsed.get_all("Provides-Extra")
-    assert extras == ["time"]
+    assert extras == ["http", "time"]
 
     requires = parsed.get_all("Requires-Dist")
     assert requires == [
         "cachy[msgpack] (>=0.2.0,<0.3.0)",
         "cleo (>=0.6,<0.7)",
         'pendulum (>=1.4,<2.0); (python_version ~= "2.7" and sys_platform == "win32" or python_version in "3.4 3.5") and (extra == "time")',
+        'requests (==2.24.0); (python_version >= "3.8" and python_version < "3.9") and (extra == "http")',
+        'requests (==2.25.0); (python_version >= "3.9" and python_version < "3.10") and (extra == "http")',
     ]
 
     urls = parsed.get_all("Project-URL")

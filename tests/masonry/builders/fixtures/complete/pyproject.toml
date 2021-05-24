@@ -33,6 +33,10 @@ exclude = [
 python = "^3.6"
 cleo = "^0.6"
 cachy = { version = "^0.2.0", extras = ["msgpack"] }
+requests = [
+    { version = "==2.24.0", python = "~3.8", optional = true },
+    { version = "==2.25.0", python = "~3.9", optional = true }
+]
 
 [tool.poetry.dependencies.pendulum]
 version = "^1.4"
@@ -43,6 +47,7 @@ optional = true
 pytest = "~3.4"
 
 [tool.poetry.extras]
+http = ["requests"]
 time = ["pendulum"]
 
 [tool.poetry.scripts]

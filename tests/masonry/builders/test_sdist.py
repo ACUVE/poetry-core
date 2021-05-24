@@ -134,7 +134,11 @@ def test_make_setup():
     assert ns["extras_require"] == {
         'time:python_version ~= "2.7" and sys_platform == "win32" or python_version in "3.4 3.5"': [
             "pendulum>=1.4,<2.0"
-        ]
+        ],
+        'http:python_version >= "3.8" and python_version < "3.9"': ["requests==2.24.0"],
+        'http:python_version >= "3.9" and python_version < "3.10"': [
+            "requests==2.25.0"
+        ],
     }
 
 
